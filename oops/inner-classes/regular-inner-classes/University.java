@@ -1,0 +1,5 @@
+class University{
+    class Department{
+        
+    }
+}
