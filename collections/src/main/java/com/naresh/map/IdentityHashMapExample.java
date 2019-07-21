@@ -1,28 +1,27 @@
-package com.naresh;
+package com.naresh.map;
 
+import java.util.IdentityHashMap;
+import java.util.Map;
 import java.util.Objects;
 
-/**
- * Hello world!
- */
-public class App {
+public class IdentityHashMapExample {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
 
-        Sample hello = new Sample("Hello");
-        Sample hello1 = new Sample("Hello");
+        Map<Sample, String> identityHashMap = new IdentityHashMap<>();
 
-        System.out.println(hello.hashCode());
-        System.out.println(hello1.hashCode());
+        identityHashMap.put(null, "4");
+        identityHashMap.put(new Sample("Hello"), "1");
+        identityHashMap.put(new Sample("Hello"), "2");
+        identityHashMap.put(new Sample("Hello"), "3");
 
-        if (hello.hashCode() == hello1.hashCode()){
-            System.out.println("Hash codes are equal");
-        }
+        System.out.println("identityHashMap = " + identityHashMap);
 
     }
 
-    static class Sample{
+
+    private static class Sample {
+
         private String name;
 
         public Sample(String name) {
